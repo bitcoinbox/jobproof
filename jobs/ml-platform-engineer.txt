@@ -1,0 +1,19 @@
+ML Platform Engineer (Remote, US)
+Cobalt Robotics Co.
+
+Build the platform our ML teams ship on. This is an infrastructure role: you make model
+deployment, serving, and monitoring reliable and repeatable.
+
+What you'll do:
+- Build and operate model-serving infrastructure on Kubernetes
+- Own CI/CD, containerization (Docker), and deployment tooling in Python
+- Set up monitoring/observability for deployed models
+- Manage data pipelines feeding training and inference
+
+Requirements:
+- 4+ years software/platform engineering, strong Python
+- Production Kubernetes and Docker
+- CI/CD, Linux, cloud (AWS/GCP)
+- MLOps experience (model serving, monitoring)
+
+Nice to have: experience supporting LLM/inference workloads.

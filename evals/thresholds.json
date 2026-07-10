@@ -1,0 +1,6 @@
+{
+  "_comment": "Regression floors for the retrieval gate. CI fails if a mean metric drops below its floor. Set with headroom under the current numbers (recall@5≈0.82, mrr≈1.0, precision@5≈0.45) so real regressions trip the gate but normal noise does not. Tighten as retrieval improves.",
+  "recall@5": 0.7,
+  "mrr": 0.9,
+  "precision@5": 0.4
+}

@@ -1,0 +1,7 @@
+anthropic>=0.69
+pydantic>=2
+python-dotenv>=1
+chromadb>=0.5            # local vector DB for the --rag path (built-in MiniLM embeddings)
+httpx>=0.27             # job ingestion HTTP client (anthropic already depends on it)
+fastapi>=0.115          # web UI / API (serve)
+uvicorn[standard]>=0.30 # ASGI server for `python -m src.cli serve`

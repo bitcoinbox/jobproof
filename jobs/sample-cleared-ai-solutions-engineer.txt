@@ -1,0 +1,19 @@
+AI Solutions Engineer (Cleared) — Remote/Hybrid
+
+We are hiring an AI Solutions Engineer to build LLM-powered applications for
+mission partners. You will design and ship RAG pipelines, integrate AI agents,
+and stand up production services that meet federal security standards.
+
+Required:
+- Active Secret clearance (TS/SCI preferred)
+- Python; experience integrating LLM APIs (Anthropic, OpenAI, or similar)
+- Familiarity with RAG, prompt engineering, and AI agent frameworks
+- Comfort with Docker, REST APIs, and cloud deployment
+- Strong grounding in security best practices (STIG/RMF a plus)
+
+Nice to have:
+- TypeScript / Node.js
+- PostgreSQL, Redis, message queues
+- Background in network or infrastructure operations
+
+Compensation: $77,600 - $176,000 depending on level and clearance.

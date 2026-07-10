@@ -1,0 +1,17 @@
+# Safety net: never copy real/personal data or local cruft into a built image.
+# (The public repo already excludes these, but this protects local Docker builds too.)
+.git
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Real, personal, or generated data — must never be baked into an image.
+.env
+*.db
+.chroma/
+out/
+master-resume.md
+resume-master.md
+experience/

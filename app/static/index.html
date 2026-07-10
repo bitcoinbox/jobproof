@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JobProof · Tailor</title>
+<style>
+  :root{
+    --bg:#08090d; --bg2:#0c0e14; --card:#11141c; --card2:#161a24;
+    --line:#1d2230; --line2:#2a3145; --txt:#e8eaf2; --txt2:#9aa3b8; --txt3:#646d84;
+    --brand:#6ca0ff; --brand2:#6ca0ff; --good:#3fbf63; --warn:#dba128; --bad:#ec5f6c;
+    --shadow:0 18px 50px rgba(0,0,0,.5); --r:10px;
+  }
+  [data-theme="light"]{--bg:#f3f5f9;--bg2:#eef1f7;--card:#fff;--card2:#f6f8fc;--line:#e2e6ef;
+    --line2:#cdd4e3;--txt:#171c28;--txt2:#525c72;--txt3:#8b94a8;--brand:#3565d8;--brand2:#3565d8;--shadow:0 18px 50px rgba(25,35,70,.14)}
+  *{box-sizing:border-box} html,body{margin:0}
+  body{background:var(--bg);
+    color:var(--txt);font:13.5px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--brand);text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none}
+  .appbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+    padding:14px 24px;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:11px}
+  .logo{width:34px;height:34px;border-radius:8px;background:#fff;border:1px solid var(--line2);display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}
+  .logo img{width:100%;height:100%;object-fit:cover;display:block}
+  .brand h1{margin:0;font-size:15px;font-weight:650} .brand .sub{font-size:12px;color:var(--txt3)}
+  main{max-width:1180px;margin:0 auto;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:860px){main{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+  label.lbl{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--txt3);margin-bottom:8px}
+  textarea{width:100%;min-height:320px;resize:vertical;background:var(--bg2);color:var(--txt);border:1px solid var(--line2);
+    border-radius:11px;padding:13px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}textarea:focus{outline:none;border-color:var(--brand)}
+  .row{display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap}
+  .seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;padding:3px}
+  .seg button{padding:7px 13px;border-radius:8px;font-size:13px;color:var(--txt2);font-weight:550;background:none;color:var(--txt2)}
+  .seg button[aria-pressed="true"]{background:color-mix(in srgb,var(--brand) 18%,transparent);color:var(--txt)}
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:9px;background:var(--brand);color:#0a1020;font-weight:650}
+  .btn:hover{filter:brightness(1.1)}
+  .btn[disabled]{opacity:.5;cursor:not-allowed}
+  .btn.ghost{background:var(--card);border:1px solid var(--line2);color:var(--txt)}
+  .muted{color:var(--txt3);font-size:13px}
+  .badge{display:inline-flex;align-items:center;justify-content:center;min-width:70px;padding:8px 14px;border-radius:999px;font-weight:800;font-size:22px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  .chip{font-size:12px;padding:3px 10px;border-radius:999px;font-weight:600}
+  .chip.match{color:var(--good);background:color-mix(in srgb,var(--good) 14%,transparent)}
+  .chip.miss{color:var(--bad);background:color-mix(in srgb,var(--bad) 14%,transparent)}
+  h3{margin:18px 0 6px;font-size:11px;color:var(--txt3);text-transform:uppercase;letter-spacing:.06em}
+  pre{white-space:pre-wrap;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:13px;font:12.5px/1.55 ui-monospace,monospace;max-height:340px;overflow:auto}
+  .src{font-size:12px;color:var(--txt3)} .err{color:var(--bad)}
+  #banner{display:none;margin:0;padding:10px 24px;background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn);font-size:13px;border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="appbar">
+  <div class="brand"><div class="logo"><img src="/static/jobproof-logo.png" alt="JobProof logo"></div><div><h1>JobProof · Tailor</h1><div class="sub" id="model"></div></div></div>
+  <a class="btn ghost" href="/">← Dashboard</a>
+</div>
+<p id="banner"></p>
+
+<main>
+  <section class="panel">
+    <label class="lbl" for="job">Job posting</label>
+    <textarea id="job" placeholder="Paste the full job description here…"></textarea>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Mode">
+        <button data-mode="full" aria-pressed="true">Full profile</button>
+        <button data-mode="rag" aria-pressed="false" id="ragbtn">RAG (retrieved)</button>
+      </div>
+      <button class="btn" id="go">✎ Tailor</button>
+      <span class="muted" id="status"></span>
+    </div>
+    <div class="muted" style="margin-top:10px">Runs on your local profile. Sample data is a fictional persona.</div>
+  </section>
+
+  <section class="panel" id="out"><div class="muted">Results appear here. Paste a posting and hit Tailor.</div></section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const esc=s=>(s==null?"":String(s)).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+let mode="full";
+const t=localStorage.getItem("aa-theme");if(t)document.documentElement.dataset.theme=t;
+// prefill from the dashboard "Tailor" hand-off
+const pre=sessionStorage.getItem("aa-prefill");if(pre){$("#job").value=pre;sessionStorage.removeItem("aa-prefill");}
+
+async function health(){try{const h=await(await fetch("/healthz")).json();$("#model").textContent=h.rag_ready?"evidence-grounded · RAG ready":"evidence-grounded";
+  if(!h.rag_ready){$("#ragbtn").disabled=true;$("#ragbtn").style.opacity=.45;$("#ragbtn").title="Build the index first";}
+  if(!h.has_master)banner("No master profile found — add sample-corpus/ or master-resume.md.");
+}catch(e){}}
+function banner(m){$("#banner").textContent=m;$("#banner").style.display="block"}
+$$(".seg button").forEach(b=>b.onclick=()=>{if(b.disabled)return;mode=b.dataset.mode;$$(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b))});
+
+$("#go").onclick=async()=>{
+  const job_text=$("#job").value.trim();
+  if(!job_text){$("#status").textContent="Paste a posting first.";return}
+  $("#go").disabled=true;$("#status").textContent="Tailoring…";$("#out").innerHTML='<div class="muted">Working… scoring fit and drafting your evidence-grounded application.</div>';
+  try{
+    const res=await fetch("/api/tailor",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({job_text,mode})});
+    const d=await res.json();
+    if(!res.ok){$("#out").innerHTML='<div class="err">'+esc(d.detail||("Error "+res.status))+'</div>';return}
+    render(d);
+  }catch(e){$("#out").innerHTML='<div class="err">Request failed: '+esc(String(e))+'</div>'}
+  finally{$("#go").disabled=false;$("#status").textContent=""}
+};
+function chips(a,c){return '<div class="chips">'+(a.length?a.map(k=>`<span class="chip ${c}">${esc(k)}</span>`).join(""):'<span class="muted">—</span>')+'</div>'}
+function render(d){
+  const col=d.fit_score>=75?"var(--good)":d.fit_score>=50?"var(--warn)":"var(--bad)";
+  let h=`<div class="row" style="justify-content:space-between;margin-top:0">
+      <span class="badge" style="color:${col};background:color-mix(in srgb,${col} 14%,transparent)">${d.fit_score}</span>
+      <span class="muted">mode: ${esc(d.mode)} · ${d.usage.output_tokens||"?"} out tok</span></div>`;
+  h+='<h3>Matched</h3>'+chips(d.matched_keywords,"match");
+  h+='<h3>Missing</h3>'+chips(d.missing_keywords,"miss");
+  if(d.why_match)h+='<h3>Why match</h3><div>'+esc(d.why_match)+'</div>';
+  if(d.why_not)h+='<h3>Why not</h3><div>'+esc(d.why_not)+'</div>';
+  if(d.missing_proof)h+='<h3>Missing proof</h3><div>'+esc(d.missing_proof)+'</div>';
+  if(d.keywords_to_mirror&&d.keywords_to_mirror.length)h+='<h3>Keywords to mirror</h3>'+chips(d.keywords_to_mirror,"match");
+  if(d.recruiter_angle)h+='<h3>Recruiter angle</h3><div>'+esc(d.recruiter_angle)+'</div>';
+  if(d.retrieved_sources&&d.retrieved_sources.length)h+='<h3>Retrieved</h3><div class="src">'+d.retrieved_sources.map(esc).join("<br>")+'</div>';
+  h+='<h3>Application note</h3><div>'+esc(d.application_note)+'</div>';
+  h+='<h3>Resume</h3><pre>'+esc(d.resume_markdown)+'</pre>';
+  h+='<h3>Cover letter</h3><pre>'+esc(d.cover_letter)+'</pre>';
+  $("#out").innerHTML=h;
+}
+health();
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Secrets
+.env
+
+# Generated output
+out/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# Persisted RAG index (rebuild with `python -m src.cli index`)
+.chroma/
+
+# Your real experience corpus (PII) — keep it local
+experience/
+
+# Your real master resume (PII) — keep it local
+master-resume.md
+
+# SQLite job-search store (real fetched postings + applications)
+*.db
+
+# Generated tracker reports
+tracker.md
+tracker.csv

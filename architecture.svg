@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560" font-family="ui-sans-serif,system-ui,Segoe UI,Roboto,sans-serif">
+  <rect width="900" height="560" rx="14" fill="#0a0c11"/>
+  <style>
+    .box{fill:#141824;stroke:#2a3140;stroke-width:1.5}
+    .accent{stroke:#6ea8fe;stroke-width:1.8}
+    .ai{stroke:#9b8cff;stroke-width:1.8}
+    .band{fill:#10131c;stroke:#222838;stroke-width:1.5}
+    .t{fill:#e9ebf2;font-size:14px;font-weight:650}
+    .s{fill:#9aa3b2;font-size:11px}
+    .lbl{fill:#6a7286;font-size:10.5px;letter-spacing:.06em}
+    .arr{stroke:#3a4252;stroke-width:1.6;fill:none;marker-end:url(#a)}
+    .arrx{stroke:#6ea8fe;stroke-width:1.6;fill:none;marker-end:url(#b)}
+  </style>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#3a4252"/></marker>
+    <marker id="b" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#6ea8fe"/></marker>
+  </defs>
+
+  <text x="28" y="34" class="t" font-size="18">JobProof — applied-AI role-fit &amp; tailoring cockpit</text>
+  <text x="28" y="54" class="s">an LLM · RAG · tool use · structured outputs · evals · FastAPI · SQLite</text>
+
+  <rect class="band" x="28" y="72" width="844" height="58" rx="10"/>
+  <text x="44" y="98" class="t">api.py — FastAPI cockpit</text>
+  <text x="44" y="116" class="s">dashboard: Apply-Today · diligence · tracker · kits + evidence · generation-run log · board / calendar / tasks</text>
+
+  <text x="28" y="160" class="lbl">PIPELINE</text>
+  <rect class="box" x="28" y="170" width="150" height="64" rx="10"/>
+  <text x="40" y="196" class="t">Job sources</text>
+  <text x="40" y="214" class="s">RemoteOK · Remotive</text>
+  <text x="40" y="228" class="s">Wellfound · fixtures</text>
+
+  <rect class="box accent" x="208" y="170" width="170" height="64" rx="10"/>
+  <text x="220" y="196" class="t">ingest.py</text>
+  <text x="220" y="214" class="s">LLM tool-use →</text>
+  <text x="220" y="228" class="s">structured JobPosting</text>
+
+  <rect class="box" x="408" y="170" width="170" height="64" rx="10"/>
+  <text x="420" y="196" class="t">rag.py</text>
+  <text x="420" y="214" class="s">Chroma vector store</text>
+  <text x="420" y="228" class="s">heading-aware top-k</text>
+
+  <rect class="box ai" x="608" y="170" width="264" height="64" rx="10"/>
+  <text x="620" y="196" class="t">tailor.py · an LLM</text>
+  <text x="620" y="214" class="s">adaptive thinking · prompt caching</text>
+  <text x="620" y="228" class="s">structured output · evidence trail</text>
+
+  <path class="arr" d="M178,202 L206,202"/>
+  <path class="arr" d="M378,202 L406,202"/>
+  <path class="arr" d="M578,202 L606,202"/>
+
+  <rect class="box" x="408" y="262" width="170" height="50" rx="10"/>
+  <text x="420" y="284" class="t">experience corpus</text>
+  <text x="420" y="300" class="s">chunk + embed</text>
+  <path class="arr" d="M493,262 L493,236"/>
+
+  <text x="608" y="262" class="lbl">OUTPUTS</text>
+  <rect class="box" x="608" y="272" width="264" height="56" rx="10"/>
+  <text x="620" y="296" class="t">resume · cover · fit 0–100</text>
+  <text x="620" y="312" class="s">keyword gap · why-match/not · application kit</text>
+  <path class="arr" d="M740,234 L740,270"/>
+
+  <text x="28" y="364" class="lbl">PERSISTENCE &amp; ANALYSIS</text>
+  <rect class="box" x="28" y="374" width="270" height="64" rx="10"/>
+  <text x="40" y="400" class="t">store.py — SQLite</text>
+  <text x="40" y="418" class="s">jobs · applications · kits</text>
+  <text x="40" y="432" class="s">generation_runs (tokens/cost) · tasks</text>
+
+  <rect class="box" x="318" y="374" width="250" height="64" rx="10"/>
+  <text x="330" y="400" class="t">eval.py</text>
+  <text x="330" y="418" class="s">RAG vs full-profile</text>
+  <text x="330" y="432" class="s">keyword-match + fit metrics</text>
+
+  <rect class="box" x="588" y="374" width="284" height="64" rx="10"/>
+  <text x="600" y="400" class="t">product.py — offline tools (no key)</text>
+  <text x="600" y="418" class="s">ATS coverage · resume diff</text>
+  <text x="600" y="432" class="s">interview prep · autofill dry-run · email parse</text>
+
+  <path class="arrx" d="M740,328 L740,352 L163,352 L163,372"/>
+
+  <rect class="band" x="28" y="468" width="844" height="62" rx="10"/>
+  <text x="44" y="492" class="t">Guarantees</text>
+  <text x="44" y="510" class="s">No hallucination: every claim grounded in retrieved evidence · facts-only system prompt · verify-links</text>
+  <text x="44" y="524" class="s">Privacy: real resume / corpus / keys / DB / kits gitignored · 122 hermetic tests · GitHub Actions CI</text>
+</svg>

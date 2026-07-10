@@ -1,0 +1,65 @@
+[
+  {
+    "source": "pr-leads", "source_id": "lm-aiml-sr",
+    "url": "https://www.lockheedmartinjobs.com/job/puerto-rico/ai-ml-engineer-sr-mid-career/694/94856325104",
+    "title": "AI/ML Engineer Sr (mid-career)", "company": "Lockheed Martin",
+    "location": "Puerto Rico (+ multiple US)", "remote": false, "salary": null,
+    "tags": ["AI", "ML", "Python", "mid-career", "no clearance required"],
+    "description_html": "<p>VERIFIED direct posting (opens the individual job). Mid-career AI/ML engineer. Clearance: None required. Locations include Puerto Rico plus several US sites.</p>",
+    "posted_at": null
+  },
+  {
+    "source": "pr-leads", "source_id": "lm-aiml-staff",
+    "url": "https://www.lockheedmartinjobs.com/job/puerto-rico/ai-machine-learning-engineer-staff/694/94981104976",
+    "title": "AI Machine Learning Engineer Staff", "company": "Lockheed Martin",
+    "location": "Austin, Texas", "remote": true, "salary": null,
+    "tags": ["GenAI", "LLM", "agents", "ML", "US citizenship"],
+    "description_html": "<p>VERIFIED direct posting (Job dated May 11, 2026). Builds generative-AI products for the 1LMX digital-transformation program (ABAP coding agents for ERP). Fully remote with quarterly travel; US citizenship required.</p>",
+    "posted_at": "2026-05-11"
+  },
+  {
+    "source": "pr-leads", "source_id": "lm-swe-sr",
+    "url": "https://www.lockheedmartinjobs.com/job/puerto-rico/sr-software-engineer-puerto-rico-florida-colorado/694/94591077744",
+    "title": "SR Software Engineer (PR / FL / CO)", "company": "Lockheed Martin",
+    "location": "Austin, Texas", "remote": false, "salary": null,
+    "tags": ["software engineering", "Python"],
+    "description_html": "<p>VERIFIED direct posting (Job ID 726350BR, dated June 5, 2026). Senior software engineer; Texas (Austin) / Florida / Colorado.</p>",
+    "posted_at": "2026-06-05"
+  },
+  {
+    "source": "pr-leads", "source_id": "lm-cyber-entry",
+    "url": "https://www.lockheedmartinjobs.com/job/puerto-rico/cyber-security-engineer-entry-level-puerto-rico/694/95827870288",
+    "title": "Cyber Security Engineer - Entry Level", "company": "Lockheed Martin",
+    "location": "Austin, Texas", "remote": false, "salary": null,
+    "tags": ["cybersecurity", "entry level", "defense"],
+    "description_html": "<p>VERIFIED direct posting (Job ID 730642BR, dated May 31, 2026). Entry-level cyber security engineer in Austin — fits a long cyber/network-defense background.</p>",
+    "posted_at": "2026-05-31"
+  },
+  {
+    "source": "pr-leads", "source_id": "evertec-fullstack",
+    "url": "https://jobs.evertecinc.com/job/PUERTO-RICO-Full-Stack-Developer-Sr_-Specialist/1368478100/",
+    "title": "Full Stack Developer Sr. Specialist", "company": "Evertec",
+    "location": "Puerto Rico", "remote": false, "salary": null,
+    "tags": ["ETL", "SQL", "Informatica", "BI"],
+    "description_html": "<p>VERIFIED direct posting (dated May 24, 2026). Business Intelligence & Analytics: Informatica PowerCenter, ETL, SQL development. (More data-integration than web full-stack — read the JD.)</p>",
+    "posted_at": "2026-05-24"
+  },
+  {
+    "source": "pr-leads", "source_id": "evertec-cyber",
+    "url": "https://jobs.evertecinc.com/job/Puerto-Rico-Cyber-Security-Specialist/1392967100/",
+    "title": "Cyber Security Specialist", "company": "Evertec",
+    "location": "Puerto Rico", "remote": false, "salary": null,
+    "tags": ["cybersecurity", "infrastructure"],
+    "description_html": "<p>VERIFIED direct posting (dated May 21, 2026). Monitor and protect the org's information infrastructure; bachelor's + 2+ yrs. Strong fit for a cyber/network-defense background.</p>",
+    "posted_at": "2026-05-21"
+  },
+  {
+    "source": "pr-leads", "source_id": "evertec-swdev-mgr",
+    "url": "https://jobs.evertecinc.com/job/PUERTO-RICO-Software-Development-Manager/1365971900/",
+    "title": "Software Development Manager", "company": "Evertec",
+    "location": "Puerto Rico", "remote": false, "salary": null,
+    "tags": ["leadership", "payments", "DevSecOps"],
+    "description_html": "<p>VERIFIED direct posting. Manage software dev teams (payment applications). Senior/management: bachelor's + 10-12 yrs management experience.</p>",
+    "posted_at": null
+  }
+]

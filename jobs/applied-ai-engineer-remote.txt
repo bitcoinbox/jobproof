@@ -1,0 +1,20 @@
+Applied AI Engineer (Remote, US)
+Northwind Labs
+
+We build LLM-powered products and need an engineer who ships them. You'll integrate
+models into real features, not run research experiments.
+
+What you'll do:
+- Integrate LLM APIs (Anthropic + OpenAI) into production features with well-designed prompts
+- Build RAG pipelines over customer data using a vector database
+- Use tool use / function calling to turn unstructured input into structured data
+- Write evals to measure and protect quality
+- Own services end to end: FastAPI, Docker, CI/CD, deploy
+
+Requirements:
+- 3+ years software engineering, strong Python
+- Production experience with LLM APIs and structured outputs
+- Comfort with RAG, embeddings, and a vector DB (Chroma, pgvector, or similar)
+- REST APIs, PostgreSQL, Docker
+
+Nice to have: TypeScript, prompt caching, observability/cost tracking.

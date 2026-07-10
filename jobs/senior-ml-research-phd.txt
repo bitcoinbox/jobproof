@@ -1,0 +1,19 @@
+Senior Machine Learning Research Scientist (Remote, US)
+Northwind Labs
+
+Advance the state of the art in model training. You'll design novel architectures, run
+large-scale training, and publish.
+
+What you'll do:
+- Train large models from scratch in PyTorch
+- Design new architectures and training objectives
+- Run and analyze large-scale experiments on GPU clusters
+- Publish at top venues (NeurIPS, ICML, ICLR)
+
+Requirements:
+- PhD in Machine Learning, CS, or a related field
+- First-author publications at top ML venues
+- Deep expertise in PyTorch and distributed training
+- Strong background in deep learning theory and optimization
+
+This is a research role, not an applied/integration role.

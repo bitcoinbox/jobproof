@@ -1,0 +1,28 @@
+[
+  {
+    "source": "fixture",
+    "source_id": "rmtv-2001",
+    "url": "https://example.com/jobs/llm-engineer",
+    "title": "LLM Engineer (Remote)",
+    "company": "Tide Pool Systems",
+    "location": "Remote (US/EU)",
+    "remote": true,
+    "salary": "$140,000–$175,000",
+    "tags": ["Python", "LLM", "prompt engineering", "evals"],
+    "description_html": "<p>Build features on top of large language models.</p><ul><li>Design prompts and structured outputs</li><li>Build and run evals</li><li>Ship Python services in Docker</li></ul>",
+    "posted_at": "2026-06-02"
+  },
+  {
+    "source": "fixture",
+    "source_id": "rmtv-2002",
+    "url": "https://example.com/jobs/ai-automation-engineer",
+    "title": "AI Automation Engineer (Remote)",
+    "company": "Northwind Labs",
+    "location": "Remote (US)",
+    "remote": true,
+    "salary": "$130,000–$160,000",
+    "tags": ["Python", "agents", "automation", "APIs"],
+    "description_html": "<p>Automate internal workflows with AI agents.</p><ul><li>Tool use / function calling</li><li>Integrate third-party APIs</li><li>Background workers and queues</li></ul>",
+    "posted_at": "5 days ago"
+  }
+]

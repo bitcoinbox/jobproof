@@ -1,0 +1,14 @@
+Network Engineer at Leidos
+
+Location: Aurora, CO (Hybrid)
+Clearance: TS/SCI with CI Polygraph required
+Salary: $135,000 - $165,000
+
+Job ID: R-00098765
+
+We are seeking a Network Engineer to support a critical DoD mission. You will design,
+configure, and maintain secure LAN/WAN infrastructure: Cisco routing and switching, VLANs,
+VPNs, and firewalls. Harden systems under STIG and RMF, and automate network operations with
+Python and Bash scripting. DevSecOps mindset. AI/ML exposure a plus.
+
+Required: TS/SCI w/ poly, Cisco, network engineering, Python, firewalls, VPN.

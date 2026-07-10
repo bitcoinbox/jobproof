@@ -1,0 +1,18 @@
+Forward Deployed Engineer (Remote, US — some travel)
+Tide Pool Systems
+
+Embed with customers to design, build, and ship AI features on top of our platform. You're
+the engineer in the room: you scope, prototype, and deploy fast, then bring lessons back
+to the product team.
+
+What you'll do:
+- Build and ship customer-facing features (TypeScript/React front end, Python services)
+- Stand up LLM integrations and RAG against customer data
+- Talk to customers, scope quickly, and own delivery end to end
+
+Requirements:
+- 1+ year software engineering with TypeScript/React and a backend language (Python, SQL)
+- Comfortable being customer-facing and shipping under ambiguity
+- Production mindset: Docker, CI/CD, deploy
+
+Bonus: LLM application experience, prompt design, vector search.

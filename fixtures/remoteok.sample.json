@@ -1,0 +1,54 @@
+[
+  {
+    "source": "fixture",
+    "source_id": "demo-1001",
+    "url": "https://example.com/jobs/applied-ai-engineer",
+    "title": "Applied AI Engineer (Remote)",
+    "company": "Northwind Labs",
+    "location": "Remote (US)",
+    "remote": true,
+    "salary": "$150,000–$185,000",
+    "tags": ["Python", "LLM", "RAG", "FastAPI", "Docker"],
+    "description_html": "<p>We build LLM-powered products and need an engineer who ships.</p><ul><li>Integrate <b>LLM (Anthropic/OpenAI)</b> APIs into production features</li><li>Build <b>RAG</b> pipelines over customer data (vector DBs)</li><li>Own services end to end: <b>FastAPI</b>, <b>Docker</b>, CI/CD</li><li>Write evals to measure quality</li></ul><p>Nice to have: TypeScript, Postgres.</p>",
+    "posted_at": "2026-06-03"
+  },
+  {
+    "source": "fixture",
+    "source_id": "demo-1002",
+    "url": "https://example.com/jobs/forward-deployed-engineer",
+    "title": "Forward Deployed Engineer",
+    "company": "Tide Pool Systems",
+    "location": "Remote (US), some travel",
+    "remote": true,
+    "salary": "$160,000–$200,000 + equity",
+    "tags": ["TypeScript", "React", "Python", "SQL", "customer-facing"],
+    "description_html": "<p>Embed with customers to build and deploy AI features on top of our platform.</p><ul><li>1+ year of software engineering (TypeScript/React/SQL)</li><li>Comfortable talking to customers and shipping fast</li><li>Bonus: LLM application experience, an active clearance</li></ul>",
+    "posted_at": "1700000000"
+  },
+  {
+    "source": "fixture",
+    "source_id": "demo-1003",
+    "url": "https://example.com/jobs/ml-platform-engineer",
+    "title": "ML Platform Engineer",
+    "company": "Cobalt Robotics Co.",
+    "location": "Remote (US)",
+    "remote": true,
+    "salary": "$145,000–$180,000",
+    "tags": ["Kubernetes", "Python", "MLOps", "Docker", "AWS"],
+    "description_html": "<p>Build the platform our ML teams deploy on.</p><ul><li>Kubernetes, Docker, CI/CD</li><li>Python tooling and infra</li><li>Model serving and monitoring</li></ul>",
+    "posted_at": "2 days ago"
+  },
+  {
+    "source": "fixture",
+    "source_id": "demo-1004",
+    "url": "https://example.com/jobs/senior-ml-research-scientist",
+    "title": "Senior ML Research Scientist",
+    "company": "Northwind Labs",
+    "location": "Remote (US)",
+    "remote": true,
+    "salary": "$210,000–$260,000",
+    "tags": ["PyTorch", "research", "PhD", "deep learning"],
+    "description_html": "<p>Advance the state of the art in model training.</p><ul><li>PhD in ML or related field</li><li>Publications at top venues (NeurIPS/ICML)</li><li>Train large models from scratch in PyTorch</li></ul>",
+    "posted_at": "2026-05-20"
+  }
+]

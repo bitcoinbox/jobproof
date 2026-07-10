@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>JobProof · Capture</title>
+<style>
+  :root{--bg:#08090d;--surface:#11141c;--surface2:#161a24;--line:#1d2230;--line2:#2a3145;
+    --txt:#e8eaf2;--txt2:#9aa3b8;--txt3:#646d84;--brand:#6ca0ff;--good:#3fbf63;--red:#ec5f6c;--r:10px}
+  *{box-sizing:border-box}html,body{margin:0}
+  body{background:var(--bg);color:var(--txt);font:13.5px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Inter,sans-serif;-webkit-font-smoothing:antialiased}
+  .bar{display:flex;align-items:center;gap:10px;padding:13px 20px;border-bottom:1px solid var(--line);background:var(--surface)}
+  .bar b{font-size:14px}.bar .sub{color:var(--txt3);font-size:11.5px}
+  a{color:var(--brand);text-decoration:none}
+  main{max-width:760px;margin:0 auto;padding:22px 20px;display:grid;gap:18px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px}
+  h2{margin:0 0 8px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--txt3)}
+  .lab{font-size:10.5px;color:var(--txt3);margin:9px 0 3px;text-transform:uppercase;letter-spacing:.05em}
+  input,textarea{width:100%;background:var(--bg);color:var(--txt);border:1px solid var(--line2);border-radius:8px;padding:8px 9px;font:inherit;font-size:12.5px}
+  input:focus,textarea:focus{outline:none;border-color:var(--brand)}
+  textarea{min-height:150px;resize:vertical;font-family:ui-monospace,Menlo,monospace;font-size:12px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .chk{display:flex;align-items:center;gap:7px;margin-top:10px;color:var(--txt2);font-size:12.5px}
+  .chk input{width:auto}
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:9px 15px;border-radius:8px;background:var(--brand);color:#0a1020;font-weight:650;border:none;cursor:pointer;font:inherit}
+  .btn:hover{filter:brightness(1.1)}.btn:disabled{opacity:.5;cursor:not-allowed}
+  .ghost{background:var(--surface2);color:var(--txt);border:1px solid var(--line2)}
+  .mark{display:inline-block;background:var(--surface2);border:1px dashed var(--line2);border-radius:8px;padding:8px 14px;color:var(--brand);font-weight:650;cursor:grab}
+  .mut{color:var(--txt3);font-size:12px}
+  .ok{color:var(--good)}.err{color:var(--red)}
+  code{background:var(--surface2);padding:1px 5px;border-radius:4px;font:11.5px ui-monospace,Menlo,monospace}
+</style>
+</head>
+<body>
+<div class="bar"><b>JobProof · Capture</b><span class="sub">save any posting to your cockpit</span><a href="/" style="margin-left:auto">← Dashboard</a></div>
+<main>
+  <div class="card">
+    <h2>1 · Install the bookmarklet (once)</h2>
+    <p class="mut">Drag this to your bookmarks bar. On any job posting, click it — it grabs the page (or your text selection) and drops you back here, pre-filled.</p>
+    <p><a class="mark" id="blet" draggable="true">＋ Capture to JobProof</a></p>
+  </div>
+
+  <div class="card">
+    <h2>2 · Review &amp; save</h2>
+    <div class="row">
+      <div><div class="lab">Role title</div><input id="title" placeholder="Senior AI Engineer"></div>
+      <div><div class="lab">Company</div><input id="company" placeholder="Acme"></div>
+    </div>
+    <div class="row">
+      <div><div class="lab">Location</div><input id="location" placeholder="Remote (US)"></div>
+      <div><div class="lab">Posting URL</div><input id="url" placeholder="https://…"></div>
+    </div>
+    <label class="chk"><input type="checkbox" id="remote" checked> Remote-eligible</label>
+    <div class="lab">Description (paste the posting if not auto-filled)</div>
+    <textarea id="description" placeholder="Paste the full job description here…"></textarea>
+    <div style="margin-top:12px;display:flex;gap:8px;align-items:center">
+      <button class="btn" id="save">Save to cockpit</button>
+      <button class="btn ghost" id="clear">Clear</button>
+      <span id="msg" class="mut"></span>
+    </div>
+  </div>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+// Build the bookmarklet against THIS origin so it works on any host/port.
+const origin=location.origin;
+const code=`javascript:(()=>{const s=getSelection().toString();const b=s||document.body.innerText||'';const p=encodeURIComponent(JSON.stringify({title:document.title,url:location.href,description:b.slice(0,9000)}));window.open('${origin}/capture#p='+p,'_blank')})()`;
+$("#blet").href=code;
+
+// If opened by the bookmarklet, the page payload rides in the hash.
+function prefill(){
+  const m=location.hash.match(/p=([^&]+)/);
+  if(!m)return;
+  let d; try{ d=JSON.parse(decodeURIComponent(m[1])); }catch(e){ return; }
+  const rawTitle=d.title||"";
+  // Common patterns: "Company - Role", "Role at Company", "Role | Company"
+  let title=rawTitle, company="";
+  let mm=rawTitle.match(/^(.*?)\s+(?:-|\||–|—|·)\s+(.*)$/);
+  if(mm){title=mm[1].trim();company=mm[2].trim();}
+  mm=rawTitle.match(/^(.*?)\s+at\s+(.*)$/i);
+  if(mm){title=mm[1].trim();company=mm[2].trim();}
+  if(!company && d.url){ try{ company=new URL(d.url).hostname.replace(/^www\./,"").split(".")[0]; }catch(e){} }
+  $("#title").value=title;
+  $("#company").value=company;
+  $("#url").value=d.url||"";
+  $("#description").value=d.description||"";
+  $("#remote").checked=/remote|anywhere|distributed/i.test((d.description||"")+rawTitle);
+  history.replaceState(null,"",location.pathname);  // clear the (large) hash
+}
+prefill();
+
+$("#clear").onclick=()=>["title","company","location","url","description"].forEach(id=>$("#"+id).value="");
+$("#save").onclick=async()=>{
+  const company=$("#company").value.trim(), title=$("#title").value.trim(), description=$("#description").value.trim();
+  if(!company||!title||!description){ msg("err","Title, company, and description are required."); return; }
+  const b=$("#save"); b.disabled=true; msg("mut","Saving…");
+  try{
+    const r=await fetch("/api/capture-job",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({title,company,description,url:$("#url").value.trim()||null,
+        location:$("#location").value.trim()||null,remote:$("#remote").checked,source:"capture"})});
+    const d=await r.json();
+    if(!r.ok){ msg("err",d.detail||"Save failed"); b.disabled=false; return; }
+    msg("ok",`Saved as job #${d.job_id}. `);
+    $("#msg").innerHTML+=`<a href="/">Open cockpit →</a>`;
+    $("#clear").click();
+  }catch(e){ msg("err","Save failed: "+e); }
+  finally{ b.disabled=false; }
+};
+function msg(cls,t){const m=$("#msg");m.className=cls;m.textContent=t;}
+</script>
+</body>
+</html>

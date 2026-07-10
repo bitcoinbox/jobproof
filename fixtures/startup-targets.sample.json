@@ -1,0 +1,74 @@
+[
+  {
+    "source": "wellfound", "source_id": "arize-fde",
+    "url": "https://job-boards.greenhouse.io/arizeai/jobs/6002637004",
+    "title": "Forward Deployed Engineer, US", "company": "Arize AI",
+    "location": "Remote (US)", "remote": true, "salary": null,
+    "tags": ["forward deployed", "ML observability", "Python", "TypeScript", "GenAI"],
+    "description_html": "VERIFIED direct Greenhouse posting. 2-5 yrs software dev, Python/Java/TypeScript, build observability/eval integrations for enterprise GenAI. No clearance needed — strong applied-AI/integration fit.",
+    "posted_at": null,
+    "legitimacy_status": "verified", "review_signal": "unknown",
+    "source_confidence": "direct_ats", "priority": 2, "apply_recommendation": "apply_today",
+    "diligence_notes": "Verified live (Greenhouse). Series C, $135M raised. Lead with shipped LLM integrations + RAG + eval harness."
+  },
+  {
+    "source": "wellfound", "source_id": "tribeai-fde-ai",
+    "url": "https://www.tribe.ai/job-postings/forward-deployed-ai-engineer",
+    "title": "Forward Deployed AI Engineer", "company": "Tribe AI",
+    "location": "NY / SF / Remote (US)", "remote": true, "salary": "$200,000–$300,000",
+    "tags": ["forward deployed", "AI", "RAG", "LLM", "consulting"],
+    "description_html": "VERIFIED posting on Tribe AI's site. Client-embedded AI delivery: LLMs, RAG pipelines, agents, vector DBs. $200-300k.",
+    "posted_at": null,
+    "legitimacy_status": "verified", "review_signal": "unknown",
+    "source_confidence": "company_site", "priority": 2, "apply_recommendation": "consider",
+    "diligence_notes": "Verified live. Requires 5+ yrs shipping AI/ML to production — a tenure stretch; lead hard with shipped LLM apps, RAG, and JobProof."
+  },
+  {
+    "source": "wellfound", "source_id": "sardine-fde-ai",
+    "url": "https://jobs.ashbyhq.com/sardine",
+    "title": "Forward Deployed AI Engineer", "company": "Sardine",
+    "location": "Remote / unverified", "remote": true, "salary": null,
+    "tags": ["forward deployed", "AI", "fintech", "fraud"],
+    "description_html": "Could NOT confirm a live FDE req — link goes to Sardine's official Ashby job board; search it for the Forward Deployed role. Sardine is a real fraud/risk fintech.",
+    "posted_at": null,
+    "legitimacy_status": "likely_legit", "review_signal": "unknown",
+    "source_confidence": "company_site", "priority": 3, "apply_recommendation": "consider",
+    "diligence_notes": "Link is the Sardine Ashby board (not a confirmed single req). Verify the FDE role is currently open + remote/PR eligibility."
+  },
+  {
+    "source": "wellfound", "source_id": "pocket-founding-ai",
+    "url": "https://wellfound.com/jobs/3834023-founding-ai-engineer",
+    "title": "Founding AI Engineer", "company": "Pocket",
+    "location": "New York City (per Wellfound)", "remote": false, "salary": null,
+    "tags": ["founding", "AI", "startup"],
+    "description_html": "Real Wellfound listing (NYC). Link may require a Wellfound login to view/apply. Confirm which 'Pocket' this is and whether remote/PR is possible.",
+    "posted_at": null,
+    "legitimacy_status": "likely_legit", "review_signal": "unknown",
+    "source_confidence": "wellfound", "priority": 3, "apply_recommendation": "consider",
+    "diligence_notes": "Wellfound link (may need login). NYC-listed — verify remote/PR. Founding role = equity-heavy; check funding/team."
+  },
+  {
+    "source": "wellfound", "source_id": "ruli-founding-ai",
+    "url": "https://wellfound.com/company/ruli/jobs",
+    "title": "Founding AI Engineer", "company": "Ruli",
+    "location": "SF Bay / Austin / Remote (per Wellfound)", "remote": true, "salary": null,
+    "tags": ["founding", "AI", "legal-tech", "startup"],
+    "description_html": "Ruli = legal-AI startup (ruli.ai), seed-stage. Link is Ruli's Wellfound jobs list (the direct req URL rotated/404'd). Confirm the Founding AI Engineer is still open.",
+    "posted_at": null,
+    "legitimacy_status": "likely_legit", "review_signal": "unknown",
+    "source_confidence": "wellfound", "priority": 3, "apply_recommendation": "consider",
+    "diligence_notes": "Real company (ruli.ai, continuous legal intelligence), small team (1-10). Wellfound jobs list (may need login). Founding role — verify comp/runway."
+  },
+  {
+    "source": "wellfound", "source_id": "hometeams-founding-ai",
+    "url": null,
+    "title": "Founding AI Engineer", "company": "HomeTeams",
+    "location": "Remote / unverified", "remote": true, "salary": null,
+    "tags": ["founding", "AI", "startup"],
+    "description_html": "NO verifiable posting found (ambiguous company name). No link added rather than a fake one — identify the actual company and find the live posting before pursuing.",
+    "posted_at": null,
+    "legitimacy_status": "needs_diligence", "review_signal": "unknown",
+    "source_confidence": "unverified", "priority": 4, "apply_recommendation": "wait",
+    "diligence_notes": "Could not locate a real posting on Wellfound or elsewhere. Confirm the company/role exists; do not invest time until verified."
+  }
+]
